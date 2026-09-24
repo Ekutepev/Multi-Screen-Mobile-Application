@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Multi-Screen-App",
-    "slug": "Multi-Screen-App",
+    "name": "Mobile_Building_UI",
+    "slug": "Mobile_Building_UI",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "multiscreenapp",
+    "scheme": "mobilebuildingui",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
@@ -17,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.Mobile_Building_UI"
     },
     "web": {
       "output": "static",
