@@ -1,0 +1,44 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  bankTab: {
+    width: "90%",
+    height: "auto",
+    borderRadius: 15,
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingLeft: 15,
+    marginBottom: 10,
+  },
+
+  bankTabTextContainer: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    paddingVertical: 15,
+  },
+
+  bankTabText: {
+    fontWeight: "bold",
+    fontSize: 19,
+  },
+
+  subText: {
+    color: "#7a7a7a",
+  },
+
+  balanceContainer: {
+    marginLeft: "auto",
+    marginRight: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  balance: {
+    fontWeight: "bold",
+    marginRight: 5,
+    fontSize: 18,
+  },
+});
