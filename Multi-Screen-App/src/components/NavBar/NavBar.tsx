@@ -4,6 +4,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { ReactNode } from "react";
 import { Alert, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
+import { router, usePathname } from "expo-router";
 
 const ACTIVE_COLOR = "#038204";
 const INACTIVE_COLOR = "#7a7a7a";
@@ -40,20 +41,21 @@ type NavBarProps = {
 };
 
 export default function NavBar({ selectedTab, onSelectTab }: NavBarProps) {
+  const pathname = usePathname();
   return (
     <View style={styles.navBar}>
       <NavBarItem
         label="Home"
-        selected={selectedTab === "Home"}
-        onPress={() => onSelectTab("Home")}
+        selected={pathname === "/"}
+        onPress={() => router.navigate("/")}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="home" size={24} color={color} />
         )}
       />
       <NavBarItem
         label="Accounts"
-        selected={selectedTab === "Accounts"}
-        onPress={() => onSelectTab("Accounts")}
+        selected={pathname === "/accounts"}
+        onPress={() => router.navigate("/accounts")}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="equal" size={24} color={color} />
         )}
