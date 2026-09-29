@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import MyAccounts from "@/components/MyAccounts/MyAccounts";
+import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
 import { StyleSheet, View } from "react-native";
 

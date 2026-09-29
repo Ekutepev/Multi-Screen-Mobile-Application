@@ -1,12 +1,12 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Header/AccHeader"
 
 export default function Accounts() {
   return (
-    <SafeAreaProvider style={styles.container}>
-      <SafeAreaView>
-        <Header name="My Accounts" />
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Header name="My Accounts" greeting="Banking" />
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -15,8 +15,9 @@ export default function Accounts() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "flex-start",
     backgroundColor: "#f3f3f3",
+    paddingHorizontal: 15
   },
 });

@@ -5,10 +5,19 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    minHeight: 200,
+    minHeight: 175,
     width: "100%",
     padding: 20,
     backgroundColor: "#008a00",
+  },
+
+  accHeader: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    minHeight: 200,
+    width: "100%",
+    backgroundColor: "#f3f3f3",
   },
 
   groupedGreeting: {
