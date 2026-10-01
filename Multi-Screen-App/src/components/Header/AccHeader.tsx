@@ -3,12 +3,12 @@ import { Text, View } from "react-native";
 import { styles } from "./styles";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-type HeaderProps = {
+type AccHeaderProps = {
   name: string;
   greeting?: string;
 };
 
-export default function AccHeader({ name, greeting }: HeaderProps) {
+export default function AccHeader({ name, greeting }: AccHeaderProps) {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.accHeader}>
