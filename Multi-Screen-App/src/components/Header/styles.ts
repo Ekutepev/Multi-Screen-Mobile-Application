@@ -12,18 +12,12 @@ export const styles = StyleSheet.create({
   },
 
   accHeader: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    minHeight: 200,
     width: "100%",
     backgroundColor: "#f3f3f3",
   },
 
   groupedGreeting: {
-    justifyContent: "flex-start",
-    alignSelf: "flex-end",
-    marginBottom: 30,
+    marginTop: 15,
   },
 
   circleIcon: {

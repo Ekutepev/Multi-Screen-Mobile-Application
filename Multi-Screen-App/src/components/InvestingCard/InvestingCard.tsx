@@ -4,7 +4,7 @@ import { styles } from "./styles";
 export default function InvestingCard() {
   return (
     <View style={styles.personalInvestmentTab}>
-      <TouchableOpacity>
+      
         <Pressable style={styles.personalInvestmentTabTextContainer}>
           <View>
             <Text style={styles.personalInvestmentTabText}>
@@ -16,7 +16,6 @@ export default function InvestingCard() {
             <Text style={styles.balance}>$0.00</Text>
           </View>
         </Pressable>
-      </TouchableOpacity>
     </View>
   );
 }
