@@ -1,26 +1,34 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import { styles } from "./styles";
+import SubCard from "./SubCards";
 
-export default function MonthlySpendCard() {
+type MonthProps = {
+  balance: string;
+  monthTabText?: string;
+  subText?: string;
+};
+
+export default function MonthlySpendCard({ monthTabText, balance, subText }: MonthProps) {
   return (
-    <View style={styles.MonthTab}>
-      <TouchableOpacity>
-        <Pressable style={styles.monthTabTextContainer}>
+    <View style={styles.monthTab}>
+      <View style={styles.monthTabTextContainer}>
+        <View>
+          <Text style={styles.monthTabText}>{monthTabText}</Text>
+        </View>
+        <View style={styles.greenBalanceContainer}>
           <View>
-            <Text style={styles.monthTabText}>Banking</Text>
-            <Text style={styles.subText}>5 accounts</Text>
+            <Text style={styles.balance}>{balance}</Text>
           </View>
-          <View style={styles.balanceContainer}>
-            <Text style={styles.balance}>$25654.00</Text>
-            <MaterialCommunityIcons
-              name="chevron-down"
-              size={30}
-              color="#797979"
-            />
+          <View>
+            <Text style={[styles.subText, { color: "black" }]}>{subText}</Text>
           </View>
-        </Pressable>
-      </TouchableOpacity>
-    </View>
+        </View>
+      </View>
+      <View style={styles.Subcard}>
+        <SubCard balance="600" subText="Typical Spend" />
+        <SubCard balance="285" subText="Below Typical" />
+      </View>
+    </View >
   );
 }

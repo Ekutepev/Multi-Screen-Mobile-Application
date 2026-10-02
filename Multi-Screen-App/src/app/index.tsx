@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import MonthlySpendCard from "@/components/MonthlySpendCard/MonthlySpendCard";
 import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
 import { ScrollView, StyleSheet, View } from "react-native";
@@ -6,9 +7,9 @@ import { ScrollView, StyleSheet, View } from "react-native";
 export default function Index() {
 
   return (
-    <ScrollView contentContainerStyle={{ paddingBottom: 100}}>
+    <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
       <View style={styles.container}>
-        
+
         <Header name="Evgeny" greeting="Good morning" />
 
         <View>
