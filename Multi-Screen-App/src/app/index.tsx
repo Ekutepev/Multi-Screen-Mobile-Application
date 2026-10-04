@@ -3,21 +3,22 @@ import MonthlySpendCard from "@/components/MonthlySpendCard/MonthlySpendCard";
 import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
 import { ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
 
   return (
-    <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
-      <View style={styles.container}>
-
-        <Header name="Evgeny" greeting="Good morning" />
-
-        <View>
-          <QuickActions />
-          <MyAccounts title="My Accounts" additionTitle="TD MySpend" />
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
+        <View >
+          <Header name="Evgeny" greeting="Good morning" />
+          <View>
+            <QuickActions />
+            <MyAccounts title="My Accounts" additionTitle="TD MySpend" />
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

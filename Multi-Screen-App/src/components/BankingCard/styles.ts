@@ -54,4 +54,11 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingVertical: 8,
   },
+
+  cardName: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#008a00",
+    width: "60%",
+  },
 });

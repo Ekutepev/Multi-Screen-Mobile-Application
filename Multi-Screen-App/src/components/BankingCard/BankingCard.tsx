@@ -6,14 +6,14 @@ import { useState } from "react";
 export default function BankingCard() {
   const [expanded, setExpanded] = useState(false);
   const accounts = [
-    { name: "TD ALL-INCLUSIVE", balance: "$6,500.56"},
-    { name: "COMPANION SAVINGS ACCOUNT", balance: "$8500.00"},
-    { name: "TD EVERY DAY SAVINGS ACCOUNT", balance: "$4,800.00"},
-    { name: "TD UNLIMITED CHEQING ACCOUNT", balance: "$432.56"},
-    { name: "TD BUSINESS BASIC ACCOUNT", balance: "$5,872.87"}];
+    { name: "TD ALL-INCLUSIVE BANKING PLAN", balance: "$6,500.56" },
+    { name: "COMPANION SAVINGS ACCOUNT", balance: "$8500.00" },
+    { name: "TD EVERY DAY SAVINGS ACCOUNT", balance: "$4,800.00" },
+    { name: "TD UNLIMITED CHEQING ACCOUNT", balance: "$432.56" },
+    { name: "TD BUSINESS BASIC ACCOUNT", balance: "$5,872.87" }];
   return (
     <View style={styles.bankTab}>
-      <Pressable style={styles.bankTabTextContainer} onPress={()  => setExpanded(!expanded)}>
+      <Pressable style={styles.bankTabTextContainer} onPress={() => setExpanded(!expanded)}>
         <View>
           <Text style={styles.bankTabText}>Banking</Text>
           <Text style={styles.subText}>5 accounts</Text>
@@ -29,10 +29,10 @@ export default function BankingCard() {
       </Pressable>
       {expanded && (
         <View style={styles.accountList}>
-          {accounts.map((acc)  => (
-            <View key={acc.name} style={styles.accountRow}>
-              <Text>{acc.name}</Text>
-              <Text>{acc.balance}</Text>
+          {accounts.map((acc, index) => (
+            <View key={acc.name} style={[styles.accountRow, index > 0 && { borderTopWidth: 1 }]}>
+              <Text style={styles.cardName}>{acc.name}</Text>
+              <Text style={styles.balance}>{acc.balance}</Text>
             </View>
           ))}
         </View>

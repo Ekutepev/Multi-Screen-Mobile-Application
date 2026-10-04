@@ -3,26 +3,29 @@ import { StyleSheet, View, ScrollView } from "react-native";
 import Header from "@/components/Header/AccHeader"
 import CreditCardCard from "@/components/CreditCardCard/CreditCardCard";
 import BankingCard from "@/components/BankingCard/BankingCard";
+import InvestingCard from "@/components/InvestingCard/InvestingCard";
 
 export default function Accounts() {
   return (
-  <SafeAreaView style={styles.container}>
-    <ScrollView>
-      <Header name="My Accounts"/>
-      <View style={{width: "100%"}}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={{ paddingHorizontal: 15 }}>
+        <Header mainHead="My Accounts" />
         <View>
-          <Header name="Banking" />
+          <Header subHead="Banking" />
           <BankingCard />
         </View>
         <View >
-          <Header name="Credit Cards"/>
+          <Header subHead="Credit Cards" />
           <CreditCardCard />
         </View>
-        
-      </View>
-    </ScrollView>
-  </SafeAreaView>
-    
+        <View>
+          <Header subHead="Personal Investing" />
+          <InvestingCard />
+        </View>
+
+      </ScrollView>
+    </SafeAreaView>
+
   );
 }
 
@@ -32,6 +35,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#f3f3f3",
-    paddingHorizontal: 15
   },
 });
