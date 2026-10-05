@@ -3,7 +3,7 @@ import BankingCard from "@/components/BankingCard/BankingCard";
 import CreditCardCard from "@/components/CreditCardCard/CreditCardCard";
 import InvestingCard from "@/components/InvestingCard/InvestingCard";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Text, View, ScrollView } from "react-native";
+import { Text, View } from "react-native";
 import { styles } from "./styles";
 import MonthlySpendCard from "../MonthlySpendCard/MonthlySpendCard";
 

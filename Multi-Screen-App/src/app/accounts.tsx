@@ -1,5 +1,6 @@
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { StyleSheet, View, ScrollView } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import Header from "@/components/Header/AccHeader"
 import CreditCardCard from "@/components/CreditCardCard/CreditCardCard";
 import BankingCard from "@/components/BankingCard/BankingCard";
@@ -9,6 +10,7 @@ export default function Accounts() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ paddingHorizontal: 15 }}>
+        <StatusBar style="dark" />
         <Header mainHead="My Accounts" />
         <View>
           <Header subHead="Banking" />
@@ -35,6 +37,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#f3f3f3",
-    paddingBottom: 100,
+    paddingBottom: 75,
   },
 });

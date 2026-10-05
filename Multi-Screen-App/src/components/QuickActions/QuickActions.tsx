@@ -46,6 +46,7 @@ export default function QuickActions() {
       <QuickActionButton
         icon={<Fontisto name="arrow-swap" size={24} color="#008a00" />}
         label="Transfer"
+        onPress={() => router.navigate("/transfer")}
       />
       <QuickActionButton
         icon={

@@ -3,12 +3,11 @@ import MonthlySpendCard from "@/components/MonthlySpendCard/MonthlySpendCard";
 import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
 import { ScrollView, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, } from "react-native-safe-area-context";
 
 export default function Index() {
-
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["left", "right", "bottom"]}>
       <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
         <View >
           <Header name="Evgeny" greeting="Good morning" />
