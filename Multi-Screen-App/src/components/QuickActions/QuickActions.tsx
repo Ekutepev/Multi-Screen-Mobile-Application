@@ -7,25 +7,24 @@ import {
   ScrollView,
   StyleProp,
   Text,
-  TouchableOpacity,
   ViewStyle,
 } from "react-native";
 import { styles } from "./styles";
+import { router } from "expo-router";
 
 type QuickActionButtonProps = {
   icon: ReactNode;
   label: string;
+  onPress?: () => void;
   style?: StyleProp<ViewStyle>;
 };
 
-function QuickActionButton({ icon, label, style }: QuickActionButtonProps) {
+function QuickActionButton({ icon, label, onPress, style }: QuickActionButtonProps) {
   return (
-    <TouchableOpacity>
-      <Pressable style={[styles.ovalButton, style]}>
-        {icon}
-        <Text style={styles.ovalButtonText}>{label}</Text>
-      </Pressable>
-    </TouchableOpacity>
+    <Pressable style={[styles.ovalButton, style]} onPress={onPress}>
+      {icon}
+      <Text style={styles.ovalButtonText}>{label}</Text>
+    </Pressable>
   );
 }
 
@@ -42,6 +41,7 @@ export default function QuickActions() {
           <MaterialCommunityIcons name="send-outline" size={24} color="#008a00" />
         }
         label="Interac e-Transfer"
+        onPress={() => router.navigate("/interacETransfer")}
       />
       <QuickActionButton
         icon={<Fontisto name="arrow-swap" size={24} color="#008a00" />}

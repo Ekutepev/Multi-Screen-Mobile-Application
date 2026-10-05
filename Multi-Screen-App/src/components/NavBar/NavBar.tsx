@@ -6,6 +6,7 @@ import { Alert, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
 import { router, usePathname } from "expo-router";
 
+
 const ACTIVE_COLOR = "#038204";
 const INACTIVE_COLOR = "#7a7a7a";
 
@@ -18,6 +19,7 @@ type NavBarItemProps = {
 
 function NavBarItem({ label, selected, onPress, renderIcon }: NavBarItemProps) {
   const color = selected ? ACTIVE_COLOR : INACTIVE_COLOR;
+
   return (
     <Pressable onPress={onPress} style={styles.navBarContainer}>
       <View style={styles.navBarIconAlignment}>
