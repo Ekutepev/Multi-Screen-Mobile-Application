@@ -1,5 +1,4 @@
 import Header from "@/components/Header/Header";
-import MonthlySpendCard from "@/components/MonthlySpendCard/MonthlySpendCard";
 import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
 import { ScrollView, StyleSheet, View } from "react-native";
