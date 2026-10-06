@@ -1,4 +1,4 @@
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { SafeAreaView} from "react-native-safe-area-context";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Header from "@/components/Header/AccHeader"

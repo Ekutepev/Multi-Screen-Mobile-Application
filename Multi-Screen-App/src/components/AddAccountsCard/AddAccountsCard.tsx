@@ -5,7 +5,6 @@ import { styles } from "./styles";
 export default function AddAccountsCard() {
   return (
     <View style={styles.accountAndServicesTab}>
-      <TouchableOpacity>
         <Pressable style={styles.accountAndServicesTabTextContainer}>
           <View style={styles.iconContainer}>
             <MaterialCommunityIcons
@@ -20,7 +19,6 @@ export default function AddAccountsCard() {
             </Text>
           </View>
         </Pressable>
-      </TouchableOpacity>
     </View>
   );
 }
