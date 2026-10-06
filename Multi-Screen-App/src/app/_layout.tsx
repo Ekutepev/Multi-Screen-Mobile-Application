@@ -9,7 +9,7 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
       <Stack screenOptions={{ headerShown: false }} />
-      <NavBar selectedTab={selectedTab} onSelectTab={setSelectedTab} />
+      <NavBar  />
     </SafeAreaProvider>
   );
 }

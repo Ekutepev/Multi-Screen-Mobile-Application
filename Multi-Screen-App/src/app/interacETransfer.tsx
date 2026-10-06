@@ -6,7 +6,7 @@ import ProfileCard from "@/components/ProfileCard/ProfileCard";
 
 
 
-export default function interacETransfer() {
+export default function InteracETransfer() {
 
     return (
         <SafeAreaView style={styles.container}>
