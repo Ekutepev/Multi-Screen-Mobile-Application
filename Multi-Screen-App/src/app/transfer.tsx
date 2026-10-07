@@ -5,11 +5,13 @@ import { router } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState } from "react";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Alert } from "react-native";
 
 
 export default function Transfer() {
     const insets = useSafeAreaInsets();
     const [amount, setAmount] = useState("");
+    const isValid = !isNaN(parseFloat(amount)) && parseFloat(amount) > 0;
 
     const formatAmount = () => {
         const number = parseFloat(amount);
@@ -20,6 +22,10 @@ export default function Transfer() {
         }
 
         setAmount(number.toFixed(2));
+    }
+
+    const handleContinue = () => {
+        Alert.alert("Continue button pressed");
     }
 
     return (
@@ -82,6 +88,13 @@ export default function Transfer() {
                     </Pressable>
                 </View>
             </View>
+            
+            <Pressable style={[styles.continueButton, !isValid && styles.continueButtonDisabled ]} 
+            onPress={handleContinue} 
+            disabled={!isValid}>
+                <Text style={styles.continueButtonText}>Continue</Text>
+            </Pressable>
+            
         </SafeAreaView >
     )
 };
@@ -173,6 +186,19 @@ const styles = StyleSheet.create({
 
     },
 
+    continueButton: {
+        marginTop: "auto",
+        backgroundColor: "#088707",
+        paddingVertical: 15,
+        alignItems: "center",
+    },
 
+    continueButtonText: {
+        color: "white",
+        fontSize: 18,
+    },
 
+    continueButtonDisabled: {
+        backgroundColor: "#bdbdbd",
+    },
 });
