@@ -4,6 +4,8 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { ReactNode } from "react";
 import { Alert, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
+import { router, usePathname } from "expo-router";
+
 
 const ACTIVE_COLOR = "#038204";
 const INACTIVE_COLOR = "#7a7a7a";
@@ -11,12 +13,13 @@ const INACTIVE_COLOR = "#7a7a7a";
 type NavBarItemProps = {
   label: string;
   selected: boolean;
-  onPress: () => void;
+  onPress?: () => void;
   renderIcon: (color: string) => ReactNode;
 };
 
 function NavBarItem({ label, selected, onPress, renderIcon }: NavBarItemProps) {
   const color = selected ? ACTIVE_COLOR : INACTIVE_COLOR;
+
   return (
     <Pressable onPress={onPress} style={styles.navBarContainer}>
       <View style={styles.navBarIconAlignment}>
@@ -34,37 +37,29 @@ function NavBarItem({ label, selected, onPress, renderIcon }: NavBarItemProps) {
   );
 }
 
-type NavBarProps = {
-  selectedTab: string;
-  onSelectTab: (tab: string) => void;
-};
-
-export default function NavBar({ selectedTab, onSelectTab }: NavBarProps) {
+export default function NavBar() {
+  const pathname = usePathname();
   return (
     <View style={styles.navBar}>
       <NavBarItem
         label="Home"
-        selected={selectedTab === "Home"}
-        onPress={() => onSelectTab("Home")}
+        selected={pathname === "/"}
+        onPress={() => router.navigate("/")}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="home" size={24} color={color} />
         )}
       />
       <NavBarItem
         label="Accounts"
-        selected={selectedTab === "Accounts"}
-        onPress={() => onSelectTab("Accounts")}
+        selected={pathname === "/accounts"}
+        onPress={() => router.navigate("/accounts")}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="equal" size={24} color={color} />
         )}
       />
       <NavBarItem
-        label="Alert"
-        selected={selectedTab === "Alert"}
-        onPress={() => {
-          onSelectTab("Alert");
-          Alert.alert("Alert tab selected");
-        }}
+        label="Move Money"
+        selected={pathname === "/moveMoney"}
         renderIcon={(color) => (
           <>
             <FontAwesome6 name="bars-staggered" size={12} color={color} />
@@ -74,16 +69,14 @@ export default function NavBar({ selectedTab, onSelectTab }: NavBarProps) {
       />
       <NavBarItem
         label="Rewards"
-        selected={selectedTab === "Rewards"}
-        onPress={() => onSelectTab("Rewards")}
+        selected={pathname === "/rewards"}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="wallet-giftcard" size={24} color={color} />
         )}
       />
       <NavBarItem
         label="More"
-        selected={selectedTab === "More"}
-        onPress={() => onSelectTab("More")}
+        selected={pathname === "/more"}
         renderIcon={(color) => (
           <MaterialCommunityIcons name="menu" size={24} color={color} />
         )}

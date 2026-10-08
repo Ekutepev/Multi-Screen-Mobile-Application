@@ -4,17 +4,20 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
-    minHeight: 200,
+    alignItems: "flex-end",
+    minHeight: 175,
     width: "100%",
     padding: 20,
     backgroundColor: "#008a00",
   },
 
+  accHeader: {
+    width: "100%",
+    backgroundColor: "#f3f3f3",
+  },
+
   groupedGreeting: {
-    justifyContent: "flex-start",
-    alignSelf: "flex-end",
-    marginBottom: 30,
+    marginTop: 15,
   },
 
   circleIcon: {
@@ -23,12 +26,38 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "white",
     justifyContent: "center",
+    alignSelf: "flex-start",
     alignItems: "center",
     marginTop: 25,
   },
 
-  greeting: {
+  HeaderOne: {
+    color: "white",
+    fontSize: 32,
+    fontWeight: "bold",
+  },
+
+  HeaderTwo: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+
+  HeaderThree: {
     color: "white",
     fontSize: 18,
+    fontWeight: "bold",
   },
+
+  RegBoldText: {
+    color: "white",
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+
+  LargeBoldText: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "bold",
+  }
 });

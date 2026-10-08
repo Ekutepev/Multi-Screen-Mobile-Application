@@ -1,26 +1,42 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
+import { useState } from "react";
 
 export default function BankingCard() {
+  const [expanded, setExpanded] = useState(false);
+  const accounts = [
+    { name: "TD ALL-INCLUSIVE BANKING PLAN", balance: "$6,500.56" },
+    { name: "COMPANION SAVINGS ACCOUNT", balance: "$8500.00" },
+    { name: "TD EVERY DAY SAVINGS ACCOUNT", balance: "$4,800.00" },
+    { name: "TD UNLIMITED CHEQING ACCOUNT", balance: "$432.56" },
+    { name: "TD BUSINESS BASIC ACCOUNT", balance: "$5,872.87" }];
   return (
     <View style={styles.bankTab}>
-      <TouchableOpacity>
-        <Pressable style={styles.bankTabTextContainer}>
-          <View>
-            <Text style={styles.bankTabText}>Banking</Text>
-            <Text style={styles.subText}>5 accounts</Text>
-          </View>
-          <View style={styles.balanceContainer}>
-            <Text style={styles.balance}>$25654.00</Text>
-            <MaterialCommunityIcons
-              name="chevron-down"
-              size={30}
-              color="#797979"
-            />
-          </View>
-        </Pressable>
-      </TouchableOpacity>
+      <Pressable style={styles.bankTabTextContainer} onPress={() => setExpanded(!expanded)}>
+        <View>
+          <Text style={styles.bankTabText}>Banking</Text>
+          <Text style={styles.subText}>5 accounts</Text>
+        </View>
+        <View style={styles.balanceContainer}>
+          <Text style={styles.balance}>$26,105.99</Text>
+          <MaterialCommunityIcons
+            name={expanded ? "chevron-up" : "chevron-down"}
+            size={30}
+            color="#797979"
+          />
+        </View>
+      </Pressable>
+      {expanded && (
+        <View style={styles.accountList}>
+          {accounts.map((acc, index) => (
+            <View key={acc.name} style={[styles.accountRow, index > 0 && { borderTopWidth: 1 }]}>
+              <Text style={styles.cardName}>{acc.name}</Text>
+              <Text style={styles.balance}>{acc.balance}</Text>
+            </View>
+          ))}
+        </View>
+      )}
     </View>
   );
 }

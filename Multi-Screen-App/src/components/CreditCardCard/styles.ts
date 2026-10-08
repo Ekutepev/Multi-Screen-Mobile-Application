@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   creditCardTab: {
-    width: "90%",
+    width: "100%",
     height: "auto",
     borderRadius: 15,
     backgroundColor: "white",
@@ -12,9 +12,9 @@ export const styles = StyleSheet.create({
   },
 
   creditCardTabTextContainer: {
-    width: "90%",
+    width: "100%",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     flexDirection: "column",
     paddingVertical: 15,
     marginLeft: 15,

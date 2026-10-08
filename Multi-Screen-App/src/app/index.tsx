@@ -1,23 +1,22 @@
 import Header from "@/components/Header/Header";
-import MyAccounts from "@/components/MyAccounts/MyAccounts";
-import NavBar from "@/components/NavBar/NavBar";
+import MyAccounts from "@/components/MyAccounts/IndexMyAccounts";
 import QuickActions from "@/components/QuickActions/QuickActions";
-import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView, } from "react-native-safe-area-context";
 
 export default function Index() {
-  const [selectedTab, setSelectedTab] = useState("Home");
   return (
-    <View style={styles.container}>
-      <Header name="Evgeny" />
-
-      <View>
-        <QuickActions />
-        <MyAccounts />
-      </View>
-
-      <NavBar selectedTab={selectedTab} onSelectTab={setSelectedTab} />
-    </View>
+    <SafeAreaView style={styles.container} edges={["left", "right", "bottom"]}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
+        <View >
+          <Header name="Evgeny" greeting="Good morning" />
+          <View>
+            <QuickActions />
+            <MyAccounts title="My Accounts" additionTitle="TD MySpend" />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   bankTab: {
-    width: "90%",
+    width: "100%",
     height: "auto",
     borderRadius: 15,
     backgroundColor: "white",
@@ -40,5 +40,25 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginRight: 5,
     fontSize: 18,
+  },
+
+  accountList: {
+    width: "100%",
+    paddingRight: 10,
+    paddingBottom: 10,
+    borderTopWidth: 1,
+  },
+
+  accountRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: 8,
+  },
+
+  cardName: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#008a00",
+    width: "60%",
   },
 });

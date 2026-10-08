@@ -5,15 +5,15 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "column",
+    paddingHorizontal: 15,
   },
 
   myAccounts: {
-    width: "90%",
+    width: "100%",
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",
-    marginTop: 20,
-    marginBottom: 20,
+    marginVertical: 20,
     zIndex: 1,
     elevation: 1,
   },

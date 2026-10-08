@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   accountAndServicesTab: {
-    width: "90%",
+    width: "100%",
     height: "auto",
     borderRadius: 15,
     backgroundColor: "white",
